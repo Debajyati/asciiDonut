@@ -1,0 +1,1 @@
+A versatile JavaScript library to render mesmerizing ASCII donut animations in both Node.js and browser environments. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to terminals (CLIs)
