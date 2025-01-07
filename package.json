@@ -1,6 +1,6 @@
 {
   "name": "asciidonut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
@@ -11,7 +11,15 @@
     }
   },
   "scripts": {},
-  "keywords": ["donut", "ascii", "3D", "animation", "terminal", "cli", "color"],
+  "keywords": [
+    "donut",
+    "ascii",
+    "3D",
+    "animation",
+    "terminal",
+    "cli",
+    "color"
+  ],
   "author": "Debajyati Dey",
   "license": "ISC",
   "description": "A versatile JavaScript library to render mesmerizing ASCII donut animations in Node.js. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to terminals (CLIs)",
