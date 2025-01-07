@@ -1,0 +1,20 @@
+{
+  "name": "asciidonut",
+  "version": "1.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "Debajyati Dey",
+  "license": "ISC",
+  "description": "A versatile JavaScript library to render mesmerizing ASCII donut animations in both Node.js and browser environments. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to websites or terminals.",
+  "devDependencies": {
+    "@types/node": "^20.17.12"
+  }
+}
