@@ -8,7 +8,6 @@ import { Donut } from "asciidonut";
 const asciiDonut = new Donut({
   height: 22,
   width: 60,
-  environment: "node",
   options: {
     foregroundColor: "green",
     // backgroundColor: "bgGreen",
