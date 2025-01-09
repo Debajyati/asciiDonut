@@ -1,3 +1,9 @@
+/**
+ * Interface representing options for configuring the donut animation.
+ */
+/**
+ * Utility class providing methods for styling console output using ANSI color codes.
+ */
 var ConsoleColors = /** @class */ (function () {
     function ConsoleColors() {
     }
@@ -44,6 +50,24 @@ var ConsoleColors = /** @class */ (function () {
     ConsoleColors.cyBright = function (text) {
         return "\u001B[96m".concat(text, "\u001B[0m"); // Bright Cyan
     };
+    ConsoleColors.orange = function (text) {
+        return "\u001B[38;5;214m".concat(text, "\u001B[0m"); // Orange background (using 256-color mode)
+    };
+    ConsoleColors.peach = function (text) {
+        return "\u001B[38;5;219m".concat(text, "\u001B[0m"); // Peach background (using 256-color mode)
+    };
+    ConsoleColors.gold = function (text) {
+        return "\u001B[38;5;220m".concat(text, "\u001B[0m"); // Gold background (using 256-color mode)
+    };
+    ConsoleColors.silver = function (text) {
+        return "\u001B[38;5;230m".concat(text, "\u001B[0m"); // Silver background (using 256-color mode)
+    };
+    ConsoleColors.pink = function (text) {
+        return "\u001B[38;5;213m".concat(text, "\u001B[0m"); // Pink background (using 256-color mode)
+    };
+    ConsoleColors.brown = function (text) {
+        return "\u001B[38;5;94m".concat(text, "\u001B[0m"); // Brown background (using 256-color mode)
+    };
     // Background colors
     ConsoleColors.bgBlack = function (text) {
         return "\u001B[40m".concat(text, "\u001B[0m");
@@ -89,7 +113,14 @@ var ConsoleColors = /** @class */ (function () {
     };
     return ConsoleColors;
 }());
+/**
+ * Class responsible for rendering and animating an ASCII donut in the console.
+ */
 var Donut = /** @class */ (function () {
+    /**
+       * Creates an instance of the Donut class.
+       * @param params - Parameters for initializing the donut animation.
+       */
     function Donut(_a) {
         var height = _a.height, width = _a.width, _b = _a.options, options = _b === void 0 ? {} : _b;
         this.intervalId = null;
@@ -100,9 +131,15 @@ var Donut = /** @class */ (function () {
         this.interval = options.interval || 50;
         this.initNode();
     }
+    /**
+       * Initializes the console for the donut animation by clearing it.
+       */
     Donut.prototype.initNode = function () {
         console.clear();
     };
+    /**
+     * Starts the ASCII donut animation in the console.
+     */
     Donut.prototype.startAnimation = function () {
         var _this = this;
         var a = 1;
@@ -155,6 +192,9 @@ var Donut = /** @class */ (function () {
         };
         this.intervalId = setInterval(renderFrame, this.interval);
     };
+    /**
+     * Stops the ASCII donut animation and clears the console.
+     */
     Donut.prototype.stopAnimation = function () {
         if (this.intervalId) {
             clearInterval(this.intervalId);

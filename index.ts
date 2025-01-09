@@ -1,15 +1,46 @@
+/**
+ * Interface representing options for configuring the donut animation.
+ */
+
 interface DonutOptions {
+  /**
+   * Foreground color for the donut animation.
+   * Must be a valid color method from `ConsoleColors`.
+   */
   foregroundColor?: string;
+  /**
+   * Background color for the donut animation.
+   * Must be a valid color method from `ConsoleColors`.
+   */
   backgroundColor?: string;
+  /**
+   * Interval time in milliseconds for the animation frame refresh rate.
+   * Default is 50ms.
+   */
   interval?: number;
 }
 
+/**
+ * Interface representing parameters for initializing the Donut class.
+ */
 interface DonutParams {
+  /**
+   * Height of the animation area.
+   */
   height: number;
+  /**
+   * Width of the animation area.
+   */
   width: number;
+  /**
+   * Optional configuration for animation appearance and timing.
+   */
   options?: DonutOptions;
 }
 
+/**
+ * Utility class providing methods for styling console output using ANSI color codes.
+ */
 class ConsoleColors {
   // Foreground colors
   static black(text: string): string {
@@ -59,6 +90,30 @@ class ConsoleColors {
 
   static cyBright(text: string): string {
     return `\x1b[96m${text}\x1b[0m`; // Bright Cyan
+  }
+
+  static orange(text: string): string {
+    return `\x1b[38;5;214m${text}\x1b[0m`; // Orange background (using 256-color mode)
+  }
+
+  static peach(text: string): string {
+    return `\x1b[38;5;219m${text}\x1b[0m`; // Peach background (using 256-color mode)
+  }
+
+  static gold(text: string): string {
+    return `\x1b[38;5;220m${text}\x1b[0m`; // Gold background (using 256-color mode)
+  }
+
+  static silver(text: string): string {
+    return `\x1b[38;5;230m${text}\x1b[0m`; // Silver background (using 256-color mode)
+  }
+
+  static pink(text: string): string {
+    return `\x1b[38;5;213m${text}\x1b[0m`; // Pink background (using 256-color mode)
+  }
+
+  static brown(text: string): string {
+    return `\x1b[38;5;94m${text}\x1b[0m`; // Brown background (using 256-color mode)
   }
 
   // Background colors
@@ -112,6 +167,9 @@ class ConsoleColors {
   }
 }
 
+/**
+ * Class responsible for rendering and animating an ASCII donut in the console.
+ */
 export class Donut {
   private height: number;
   private width: number;
@@ -120,6 +178,10 @@ export class Donut {
   private interval: number;
   private intervalId: NodeJS.Timeout | null = null;
 
+/**
+   * Creates an instance of the Donut class.
+   * @param params - Parameters for initializing the donut animation.
+   */  
   constructor({ height, width, options = {} }: DonutParams) {
     this.height = height || 22; // Default height for animation
     this.width = width || 80;  // Default width for animation
@@ -130,10 +192,16 @@ export class Donut {
     this.initNode();
   }
 
+/**
+   * Initializes the console for the donut animation by clearing it.
+   */
   private initNode(): void {
     console.clear();
   }
 
+  /**
+   * Starts the ASCII donut animation in the console.
+   */
   public startAnimation(): void {
     let a = 1;
     let b = 0;
@@ -197,6 +265,9 @@ export class Donut {
     this.intervalId = setInterval(renderFrame, this.interval);
   }
 
+  /**
+   * Stops the ASCII donut animation and clears the console.
+   */
   public stopAnimation(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
