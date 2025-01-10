@@ -47,7 +47,7 @@ class ConsoleColors {
     return `\x1b[30m${text}\x1b[0m`;
   }
   static red(text: string): string {
-    return `\x1b[31m${text}\x1b[0m`;
+    return `\x1b[91m${text}\x1b[0m`;
   }
   static green(text: string): string {
     return `\x1b[32m${text}\x1b[0m`;
@@ -73,7 +73,7 @@ class ConsoleColors {
   }
 
   static rdBright(text: string): string {
-    return `\x1b[91m${text}\x1b[0m`; // Bright Red
+    return `\x1b[31m${text}\x1b[0m`;  // Bright Red
   }
 
   static ylBright(text: string): string {

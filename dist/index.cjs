@@ -15,7 +15,7 @@ var ConsoleColors = /** @class */ (function () {
         return "\u001B[30m".concat(text, "\u001B[0m");
     };
     ConsoleColors.red = function (text) {
-        return "\u001B[31m".concat(text, "\u001B[0m");
+        return "\u001B[91m".concat(text, "\u001B[0m");
     };
     ConsoleColors.green = function (text) {
         return "\u001B[32m".concat(text, "\u001B[0m");
@@ -39,7 +39,7 @@ var ConsoleColors = /** @class */ (function () {
         return "\u001B[92m".concat(text, "\u001B[0m"); // Bright Green
     };
     ConsoleColors.rdBright = function (text) {
-        return "\u001B[91m".concat(text, "\u001B[0m"); // Bright Red
+        return "\u001B[31m".concat(text, "\u001B[0m"); // Bright Red
     };
     ConsoleColors.ylBright = function (text) {
         return "\u001B[93m".concat(text, "\u001B[0m"); // Bright Yellow
