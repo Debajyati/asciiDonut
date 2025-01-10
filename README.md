@@ -23,9 +23,9 @@ setTimeout(() => {
 }, 8000);
 ```
 
-## Constructor arguments
+## Library Exports
 
-The Donut constructor is the only export from the library. 
+The `Donut` constructor is the only export from the library.
 
 ## Constructor arguments
 
@@ -36,8 +36,8 @@ foregroundColor - color of the ascii texts in the animation (the donut). "white"
 backgroundColor - color of the background of the donut. "bgBlack" by default.
 interval - frame rate of the animation. It is 50 by default.
 
-### Valid Values of Colors (foregroundColor and backgroundColor in options) for the ascii art
+### Valid Values of Colors (`foregroundColor` and `backgroundColor` in options) for the ascii art
 
-Foreground colors: "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink", "peach", "gold", "silver", "brown"
+Foreground colors: "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink", "peach", "gold", "silver", "brown", "ylBright", "rdBright", "cyBright", "blBright", "mgBright", "grBright"
 
 Background colors: "bgBlack", "bgRed", "bgGreen", "bgYellow", "bgMagenta", "bgCyan", "bgWhite", "bgOrange", "bgPeach", "bgPink", "bgBlue", "bgGold", "bgSilver", "bgBrown"
