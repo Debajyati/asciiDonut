@@ -3,7 +3,7 @@ A versatile JavaScript library to render mesmerizing ASCII donut animations in N
 ## Usage Example
 
 ```js
-import { Donut } from "asciidonut";
+import { Donut } from "ascii-donut";
 
 const asciiDonut = new Donut({
   height: 22,
