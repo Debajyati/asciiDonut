@@ -1,7 +1,13 @@
-A versatile JavaScript library to render mesmerizing ASCII donut animations in Node.js. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to CLIs.
+A versatile JavaScript library (written in typescript) to render mesmerizing ASCII donut animations in Node.js. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to CLIs.
 
 ## Usage Example
 
+1. The `startAnimation()` and `stopAnimation()` methods must be used together.
+They directly print animation to the console. Without `stopAnimation()`, `startAnimation()` won't work.
+
+As these methods cause side effects, they aren't suitable for browser/gui use.
+
+To use in browser, check out `generateFrames()` method.
 ```js
 import { Donut } from "ascii-donut";
 
@@ -13,7 +19,7 @@ const asciiDonut = new Donut({
     // backgroundColor: "bgGreen",
     interval: 25,
   }
-})
+});
 
 asciiDonut.startAnimation();
 
@@ -23,6 +29,41 @@ setTimeout(() => {
 }, 8000);
 ```
 
+2. The `generateFrames()` is an asynchronous generator method that yields ASCII donut frames at the specified interval for the given time duration.
+It returns An async iterator that yields ASCII frames as strings.
+
+This method is universal ( **I guess so :)** ).
+For example, you can achieve the above functionality with the `generateFrames()` method also. Look below - 
+```js
+const { Donut } = require("ascii-donut");
+
+const asciiDonut = new Donut({
+  height: 22,
+  width: 60,
+  options: {
+    foregroundColor: "ylBright",
+    interval: 25,
+  },
+});
+
+(async () => {
+  const duration = 8000; // Total animation duration in milliseconds
+
+  const startTime = Date.now();
+
+  // Generating and logging frames for the specified duration
+  for await (const frame of asciiDonut.generateFrames(duration)) {
+    console.clear();
+    console.log(frame);
+
+    console.log(`Time elapsed: ${(Date.now() - startTime) / 1000}s`);
+  }
+
+  console.log("Animation stopped.");
+})();
+```
+
+In many interesting ways, user can implement the ascii animation by the generated frames of strings in the DOM, which is upto the user how he/she will implement that.
 ## Library Exports
 
 The `Donut` constructor is the only export from the library.
