@@ -45,6 +45,8 @@ export declare class Donut {
     private backgroundColor;
     private interval;
     private intervalId;
+    private a;
+    private b;
     /**
        * Creates an instance of the Donut class.
        * @param params - Parameters for initializing the donut animation.
@@ -55,6 +57,17 @@ export declare class Donut {
        */
     private initNode;
     /**
+     * Generates the ASCII donut frame output for the current angles `a` and `b`.
+     * @returns The ASCII donut output string.
+     */
+    private generateFrameOutput;
+    /**
+     * Private method that applies color to `inputString`.
+     * @param inputString - The string to apply color into.
+     * @returns The color applied output string.
+     */
+    private applyColors;
+    /**
      * Starts the ASCII donut animation in the console.
      */
     startAnimation(): void;
@@ -62,5 +75,11 @@ export declare class Donut {
      * Stops the ASCII donut animation and clears the console.
      */
     stopAnimation(): void;
+    /**
+   * Asynchronous generator that yields ASCII donut frames at the specified interval.
+   * @param duration - Total duration (in milliseconds) for generating frames.
+   * @returns An async iterator that yields ASCII frames as strings.
+   */
+    generateFrames(duration: number): AsyncGenerator<string>;
 }
 export {};
