@@ -17,13 +17,13 @@ function commonjs() {
 if [ $# -eq 0 ]; then
     ESM && commonjs
     printf "\033[42m Both Exports building done\033[0m\n"
-elif [ "$1" -eq "-e" ]; then
+elif [ "$1" = "-e" ]; then
     ESM
-    printf "\033[42m ESM Exports building done \033[0m\n"
-elif [ "$1" -eq "-c" ]; then
+    printf "\033[42m ESM Export building done \033[0m\n"
+elif [ "$1" = "-c" ]; then
     commonjs
-    printf "\033[42m commonjs Exports building done \033[0m\n"
+    printf "\033[42m commonjs Export building done \033[0m\n"
 else
-    printf "\033[41m Wrong Command! \033[0m" >&2
+    printf "\033[41m Wrong Command! \033[0m\n" >&2
     exit 1
 fi
