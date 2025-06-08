@@ -1,3 +1,4 @@
+# ![ascii-donut-logo](https://github.com/Debajyati/asciiDonut/blob/main/ASCII-DONUT.png)
 A versatile JavaScript library (written in typescript) to render mesmerizing ASCII donut animations in Node.js. Customizable foreground and background colors, interval timing, and resolution make it perfect for adding a retro terminal aesthetic to CLIs.
 
 ## Usage Example
